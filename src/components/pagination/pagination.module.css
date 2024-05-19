@@ -12,3 +12,8 @@
   cursor: pointer;
   border-radius: 5px;
 }
+
+.button:disabled{
+  background-color: grey;
+  cursor: not-allowed;
+}
