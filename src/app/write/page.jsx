@@ -3,7 +3,6 @@
 import React, { useState } from "react";
 import styles from "./writePage.module.css";
 import Image from "next/image";
-import Link from "next/link";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.bubble.css";
 import { useSession } from "next-auth/react";
