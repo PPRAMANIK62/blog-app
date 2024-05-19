@@ -4,9 +4,9 @@ import Pagination from "../pagination/Pagination";
 import Card from "../card/Card";
 import { POSTS_PER_PAGE } from "@/lib/constants";
 
-const getData = async (page) => {
+const getData = async (page, cat) => {
   const res = await fetch(
-    `${process.env.NEXTAUTH_URL}/api/posts?page=${page}`,
+    `${process.env.NEXTAUTH_URL}/api/posts?page=${page}&cat=${cat || ""}`,
     {
       cache: "default",
     }
@@ -17,8 +17,8 @@ const getData = async (page) => {
   return res.json();
 };
 
-const CardList = async ({ page }) => {
-  const { posts, count } = await getData(page);
+const CardList = async ({ page, cat }) => {
+  const { posts, count } = await getData(page, cat);
 
   const hasPrev = POSTS_PER_PAGE * (page - 1) > 0;
   const hasNext = POSTS_PER_PAGE * page < count;
