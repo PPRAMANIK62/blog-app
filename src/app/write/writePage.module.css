@@ -1,4 +1,7 @@
 .container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
 }
 
 .editor {
@@ -21,7 +24,7 @@
   cursor: pointer;
 }
 
-.button{
+.button {
   margin-top: 12px;
 }
 
@@ -49,7 +52,7 @@
   color: var(--textColor);
 }
 
-.input::placeholder{
+.input::placeholder {
   color: #b3b3b1;
 }
 
@@ -57,7 +60,7 @@
   width: 100%;
 }
 
-.publish{
+.publish {
   position: absolute;
   top: 30px;
   right: 20px;
