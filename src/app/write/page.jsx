@@ -17,8 +17,9 @@ import dynamic from "next/dynamic";
 
 const storage = getStorage(app);
 
+const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
+
 const WritePage = () => {
-  const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
   const [open, setOpen] = useState(false);
   const [value, setValue] = useState("");
 
@@ -94,7 +95,7 @@ const WritePage = () => {
 
     if (!res.ok) throw new Error("Failed to create post");
 
-    router.push("/api/posts");
+    router.push("/");
   };
 
   return (
